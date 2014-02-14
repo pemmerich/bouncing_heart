@@ -18,8 +18,9 @@ bouncinghearts.demo = (function() {
 	var birdDelayCounter = 0; // counter for delaying creation of birds
 	var focused = true;
 	var hearts = ["heart_1.png","heart_2.png","heart_3.png","heart_4.png","heart_5.png"];
-	var heartMessages = ["be mine", "sexy rita", "R-♥-P","love"];
-	var alertMessages = ["I Love You!", "You Make Me Smile!", "You're Beautiful!","You're Special!"];
+	var heartMessages = [ "sexy rita", "R-♥-P", "be mine","my love", "xoxo", "cute", "you rock","cutie pie","call me","you're sweet","kiss me","love bug","how nice","that smile","you& me"];
+	var alertMessages = ["Chinese Buffets For Your Sister's Birthday","Face Painting","Gymnastics","Parent Teacher Night","Sand Sculptures At The Shore","The Best Sex Ever","I Hop", "Drawing Pictures","Hoboken Hospital","The Park","The Lake","Pancakes","My Little Pony","Spiders","Brass Knuckles","Queens Science Museum","Applefest And Apple Picking","Hay Rides","Camping","Hoolihans","Jersey Shore","Meadowlands Fair", "Danika And The Girls","Charlie","Roosevelt Island","Bike Rides","Smoking In The Bathroom","I Love You!", "Sleep Overs", "You Make Me Smile!", "You're Beautiful!","You're Sweet!","R U A Beaver? Cuz Damn!"];
+	var usedMessages=[];
 	var alertText;
 	var alertBG;
 	
@@ -295,10 +296,15 @@ bouncinghearts.demo = (function() {
 
 	var handleClick = function(){
 		var message = alertMessages[Math.floor(Math.random() * alertMessages.length)];
+		console.log("handle click message = "+message+" index of = "+usedMessages.indexOf(message));
+		if(usedMessages.length>=alertMessages.length){
+			usedMessages=[];
+		}
 		try{
-			while(message==alertText.text){
+			while(usedMessages.indexOf(message)>-1){
 				message = alertMessages[Math.floor(Math.random() * alertMessages.length)];
 			}
+			usedMessages.push(message);
 			updateAlert(message);
 		}catch(e){
 			updateAlert(message);
@@ -319,7 +325,6 @@ bouncinghearts.demo = (function() {
 		var height = alertText.getBounds().height+20;
 		
 		alertBG = new createjs.Shape();
-		//alertBG.graphics.beginFill("#f0d3e4").drawRoundRect(stage.canvas.width/2-width/2,stage.canvas.height/2-10,width,height,10);
 		alertBG.graphics.beginFill("#f0d3e4").drawRoundRect(0,0,width,height,10);
 		
 		alertText.scaleX=10;
@@ -339,17 +344,6 @@ bouncinghearts.demo = (function() {
 		stage.addChild(alertBG,alertText);
 		stage.setChildIndex(alertBG,stage.getNumChildren()-1);
 		stage.setChildIndex(alertText,stage.getNumChildren()-1);
-		
-		//alertText.alpha=0;
-		// set up a tween that tweens between scale 0.3 and 1 every second.
-		
-		/*
-		createjs.Tween.get(alertBG{loop:false})
-			.to({scaleX:1,scaleY:1,x:stage.canvas.width/2-width/2,y:stage.canvas.height/2-10},1000,createjs.Ease.bounceOut) // tween to scaleX/Y of 1 with ease bounce out
-			.call(function(){createjs.Tween.get(alertText,{loop:false})
-				.to({alpha:1},500)}) 
-				*/
-		
 		
 		createjs.Tween.get(alertBG,{loop:false})
 		.to({scaleX:1,scaleY:1,x:stage.canvas.width/2-width/2,y:stage.canvas.height/2-10},1000,createjs.Ease.bounceOut) // tween to scaleX/Y of 1 with ease bounce out
