@@ -18,8 +18,8 @@ bouncinghearts.demo = (function() {
 	var birdDelayCounter = 0; // counter for delaying creation of birds
 	var focused = true;
 	var hearts = ["heart_1.png","heart_2.png","heart_3.png","heart_4.png","heart_5.png"];
-	var heartMessages = [ "sexy rita", "R-♥-P", "be mine","my love", "xoxo", "cute", "you rock","cutie pie","call me","you're sweet","kiss me","love bug","how nice","that smile","you& me"];
-	var alertMessages = ["Chinese Buffets For Your Sister's Birthday","Face Painting","Gymnastics","Parent Teacher Night","Sand Sculptures At The Shore","The Best Sex Ever","I Hop", "Drawing Pictures","Hoboken Hospital","The Park","The Lake","Pancakes","My Little Pony","Spiders","Brass Knuckles","Queens Science Museum","Applefest And Apple Picking","Hay Rides","Camping","Hoolihans","Jersey Shore","Meadowlands Fair", "Danika And The Girls","Charlie","Roosevelt Island","Bike Rides","Smoking In The Bathroom","I Love You!", "Sleep Overs", "You Make Me Smile!", "You're Beautiful!","You're Sweet!","R U A Beaver? Cuz Damn!"];
+	var heartMessages = [ "sexy betsy", "B-♥-P", "be mine","my love", "xoxo", "cute", "you rock","cutie pie","call me","you're sweet","kiss me","love bug","how nice","that smile","you& me"];
+	var alertMessages = ["Wet N Leakin; Peurto Rican!","If You Were A Transformer, You'd Be Optimus FINE!", "Hot Damn!", "Golly Gee, She Gets Down Like That?","Hello Ladies!","True Detective","Do You Want Any Snacks?","One time...they thought we weren't good...and then...and then we WERE good...","White Boys Be Like'Morphin Powers Activate!","I's Good Sir...Yes'm","This Could Be Us, But You Fish Fillet'n","Fall Back Son!", "We Fuck Like Animals","I Love You!", "Sleep Overs", "You Make Me Smile!", "You're Beautiful!","You're Sweet!","R U A Beaver? Cuz Damn!"];
 	var usedMessages=[];
 	var alertText;
 	var alertBG;
@@ -56,7 +56,7 @@ bouncinghearts.demo = (function() {
 			canvas.width  = window.innerWidth;
 			canvas.height = window.innerHeight;
 		
-			bouncinghearts.demo.updateAlert("Click A Heart For A Speial Valentines Message :-)");
+			bouncinghearts.demo.updateAlert("Click A Heart For A Speial Valentines Message! :-)");
 			
 			console.log("setup stage width = "+stage.canvas.width+" stage height = "+stage.canvas.height);
 		}
